@@ -18,8 +18,8 @@ def scrape():
     soup = bs(html, "html.parser")  
 
     #save first article heading and teaser paragraph
-    news_title = soup.find('div', class_='content_title')
-    news_para = soup.find('div', class_='article_teaser_body')
+    news_title = soup.find('div', class_='content_title').text
+    news_para = soup.find('div', class_='article_teaser_body').text
 
     browser.quit()
 
@@ -86,4 +86,4 @@ def scrape():
 
     browser.quit()
 ####################################
-    return 
+    return news_title

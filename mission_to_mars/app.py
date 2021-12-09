@@ -11,7 +11,8 @@ conn = 'mongodb://localhost:27017'
 # Pass connection to the pymongo instance.
 client = pymongo.MongoClient(conn)
 # Connect to a database. Will create one if not already available.
-db = client.mars_db
+db = client.mars
+website_info = db.website_info
 
 
 
@@ -19,6 +20,7 @@ db = client.mars_db
 @app.route('/')
 def index():
     #query mongo db
+    mars_data = website_info.find()
     ####### mars_data = db.website.find()
     return render_template('index.html', mars_data=mars_data)
 
@@ -28,7 +30,7 @@ def scraper():
     
     info = scrape_mars.scrape()
     #store in mongo as dictionary
-    website.update({}, info, upsert=True)
+    website_info.update_many({}, info, upsert=True)
     return redirect("/", code=302)
 
 
