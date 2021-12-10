@@ -52,10 +52,12 @@ def scrape():
     table = pd.read_html(url)
 
     mars_facts_df = table[1]
-    mars_facts_df.rename(columns={"0": "fact_title", "1": "data"}, inplace=True)
+    mars_facts_df.rename(columns={0: "Stat", 1: "Data"}, inplace=True)
+    mars_facts_df.set_index("Stat", inplace=True)
 
     html_table = mars_facts_df.to_html()
     html_table_clean = html_table.replace('\n', '')
+    html_table_clean = html_table_clean.replace('dataframe', 'table')
 
     mars_data['facts_table'] = html_table_clean
 

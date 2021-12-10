@@ -28,16 +28,16 @@
     </div>
     
     <div class="row">
-      <div class='col-7'>
+      <div class='col-6'>
         <h2>Featured Mars Image</h2>
           <img src="{{mars_data.feature_img}}" alt="Mars image">
       </div>
-      <div class= 'col-5'>
-        <table class="table">
+
+      <div class="table-responsive">
         {{mars_data.facts_table}}
-      </table>
       </div>
-    </div>
+
+    </div> <!--closing row-->
     
     <div class='row'>
       <div class='col-12'>
@@ -47,7 +47,7 @@
     
     <div class="row">
       <div class="col-3">
-        <div class="card">  <!--style="width: 18rem;"-->
+        <div class="card">  
           <img src="{{mars_data.Cerberus_img_url}}" class="card-img-top" alt="Cerberus">
           <div class="card-body">
             <p class="card-text">{{mars_data.Cerberus_title}}</p>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="col-3">
-        <div class="card">  <!--style="width: 18rem;"-->
+        <div class="card"> 
           <img src="{{mars_data.Schiaparelli_img_url}}" class="card-img-top" alt="Schiaparelli">
           <div class="card-body">
             <p class="card-text">{{mars_data.Schiaparelli_title}}</p>
@@ -65,16 +65,16 @@
       </div>
       
       <div class="col-3">
-        <div class="card">  <!--style="width: 18rem;"-->
+        <div class="card">  
           <img src="{{mars_data.Syrtis_img_url}}" class="card-img-top" alt="Syrtis Major">
           <div class="card-body">
-            <p class="card-text">{{mars_data.Major_title}}</p>
+            <p class="card-text">{{mars_data.Syrtis_title}}</p>
           </div>
         </div>
       </div>
       
       <div class="col-3">
-        <div class="card">  <!--style="width: 18rem;"-->
+        <div class="card">  
           <img src="{{mars_data.Valles_img_url}}" class="card-img-top" alt="Valles Marineris">
           <div class="card-body">
             <p class="card-text">{{mars_data.Valles_title}}</p>
@@ -82,7 +82,7 @@
         </div>
       </div>
 
-    </div> <!--row-->
+    </div> <!--row with cards-->
       
   </div> <!--container-->
 </body>
