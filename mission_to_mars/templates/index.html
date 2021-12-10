@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Find a Phone</title>
+  <title>Mars Facts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -17,15 +17,74 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get the latest data</a></p>
     </div>
 
-    <div>
-      <p>
-        {{mars_data.title}}
-      </p>
+    <div class='row'>
+      <div class='col-12'>
+        <h2>Latest Mars News Story</h2>
+        <h4>{{mars_data.news_title}}</h4>
+        <p>
+          {{mars_data.news_para}}
+        </p>
+      </div>   
     </div>
-    <!-- more html stuff here -->
-  
+    
+    <div class="row">
+      <div class='col-7'>
+        <h2>Featured Mars Image</h2>
+          <img src="{{mars_data.feature_img}}" alt="Mars image">
+      </div>
+      <div class= 'col-5'>
+        <table class="table">
+        {{mars_data.facts_table}}
+      </table>
+      </div>
+    </div>
+    
+    <div class='row'>
+      <div class='col-12'>
+        <h2>Hemispheres of Mars</h2>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-3">
+        <div class="card">  <!--style="width: 18rem;"-->
+          <img src="{{mars_data.Cerberus_img_url}}" class="card-img-top" alt="Cerberus">
+          <div class="card-body">
+            <p class="card-text">{{mars_data.Cerberus_title}}</p>
+          </div>
+        </div>
+      </div>
 
-  </div>
+      <div class="col-3">
+        <div class="card">  <!--style="width: 18rem;"-->
+          <img src="{{mars_data.Schiaparelli_img_url}}" class="card-img-top" alt="Schiaparelli">
+          <div class="card-body">
+            <p class="card-text">{{mars_data.Schiaparelli_title}}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-3">
+        <div class="card">  <!--style="width: 18rem;"-->
+          <img src="{{mars_data.Syrtis_img_url}}" class="card-img-top" alt="Syrtis Major">
+          <div class="card-body">
+            <p class="card-text">{{mars_data.Major_title}}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-3">
+        <div class="card">  <!--style="width: 18rem;"-->
+          <img src="{{mars_data.Valles_img_url}}" class="card-img-top" alt="Valles Marineris">
+          <div class="card-body">
+            <p class="card-text">{{mars_data.Valles_title}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div> <!--row-->
+      
+  </div> <!--container-->
 </body>
 
 </html>
